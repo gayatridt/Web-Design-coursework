@@ -1,0 +1,89 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#homepage {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  "header header"
+  "localmenu main"
+  "footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: plum;
+}
+
+.primary-nav .menu {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-nav .menu a {
+  color: blue;
+  text-decoration: underline;
+  padding: 15px 10px;
+  display: block;
+  text-align: center;
+}
+
+.primary-nav .menu a:hover {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.local-menu {
+  grid-area: localmenu;
+  background-color: pink;
+  border-right: 1px solid black;
+}
+
+.local-menu li {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.local-menu a {
+  display: block;
+  color: blue;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.local-menu a:hover {
+  background-color: plum;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  grid-area: main;
+  background-color: pink;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: plum;
+  padding: 10px;
+  text-align: left;
+}
+
+footer a {
+  color: blue;
+  text-decoration: underline;
+  text-align: left;
+}
