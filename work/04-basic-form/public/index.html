@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Registration Form</h1>
+    </header>
+
+    <main class="main-content">
+        <form action="/submit" method="POST" class="registration-form">
+            <p class="form-instructions">Fields marked with <span class="required-indicator">*</span> are required.</p>
+            
+            <div class="form-group">
+                <label for="name" class="required-field">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required-field">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="annoy-me" name="annoy-me" checked>
+                <label for="annoy-me">Do you want us to send you annoying emails?</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="tier" class="required-field">Select your tier:</label>
+                <select id="tier" name="tier" required aria-required="true">
+                    <option value="" selected>Please select</option>
+                    <option value="1">Silver Tier</option>
+                    <option value="2">Gold Tier</option>
+                    <option value="3">Platinum Tier</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-button">Register</button>
+        </form>
+    </main>
+
+    <footer class="page-footer">
+        <a href="#" class="privacy-policy">Privacy Policy</a>
+    </footer>
+</body>
+</html>
