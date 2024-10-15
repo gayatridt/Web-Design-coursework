@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Cat Updates</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/cat_logo.png" alt="Cat logo - A cute cartoon cat face">
+        </a>
+        <h1 class="site-title">Register for Cat Updates</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="future-content.html">Future Plans</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">External Links</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://en.wikipedia.org/wiki/Cat" target="_blank">Wikipedia: Cats</a></li>
+                        <li><a href="https://icatcare.org/" target="_blank">International Cat Care</a></li>
+                        <li><a href="https://www.aspca.org/pet-care/cat-care" target="_blank">ASPCA Cat Care</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="register-container">
+            <p class="centered-text">Please fill out the form below to receive updates about cats and cat care.</p>
+            <form class="register-form" action="/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">* (Required)</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">* (Required)</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Interests (check all that apply):</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cat-breeds" name="cat-breeds" value="yes">
+                        <label for="cat-breeds">Cat Breeds</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="care-tips" name="care-tips" value="yes">
+                        <label for="care-tips">Cat Care Tips</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cat-health" name="cat-health" value="yes">
+                        <label for="cat-health">Cat Health</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Cat Experience Level</label>
+                    <select id="experience" name="experience">
+                        <option value="">Select an option</option>
+                        <option value="new">New to cats</option>
+                        <option value="some">Some experience</option>
+                        <option value="experienced">Experienced cat owner</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to our newsletter</label>
+                </div>
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cats: Furry Friends. All rights reserved. | <a href="privacy-policy.html" class="privacy-link">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
