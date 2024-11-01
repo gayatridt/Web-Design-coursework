@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="page-header" role="banner">
+        <h1>Registration Form</h1>
+    </header>
+
+    <main class="main-content" role="main">
+        <form id="registration-form" class="registration-form" action="/register" method="POST">
+            <div class="form-group">
+                <label for="name">
+                    Name
+                    <span class="required-marker" aria-label="required">* Required</span>
+                </label>
+                <div class="input-container">
+                    <input type="text" id="name" name="name" class="form-input" aria-required="true">
+                    <span id="name-error" class="error-message" role="alert"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Email
+                    <span class="required-marker" aria-label="required">* Required</span>
+                </label>
+                <div class="input-container">
+                    <input type="text" id="email" name="email" class="form-input" aria-required="true">
+                    <span id="email-error" class="error-message" role="alert"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-email">
+                    Confirm Email
+                    <span class="required-marker" aria-label="required">* Required</span>
+                </label>
+                <div class="input-container">
+                    <input type="text" id="confirm-email" name="confirm-email" class="form-input" aria-required="true">
+                    <span id="confirm-email-error" class="error-message" role="alert"></span>
+                </div>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="wants-spam" id="wants-spam">
+                    <span class="checkbox-text">Send me updates about special offers</span>
+                </label>
+                <span id="spam-description" class="visually-hidden">Check this box to receive promotional emails</span>
+            </div>
+
+            <div class="form-group">
+                <label for="tier">Membership Tier</label>
+                <div class="input-container">
+                    <select name="tier" id="tier" class="form-input">
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                        <option value="enterprise">Enterprise</option>
+                    </select>
+                    <span id="tier-description" class="visually-hidden">Choose your membership level</span>
+                </div>
+            </div>
+
+            <div class="form-group form-group--submit">
+                <button type="submit" class="submit-button">Register</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="page-footer">
+        © 2024 Web Design Form <a href="policy.html" class="privacy-policy">Privacy Policy</a>
+        </footer>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
