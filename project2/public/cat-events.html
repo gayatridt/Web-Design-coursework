@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Events - Cat Power</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip__tocontent">Skip to main content</a>
+    
+    <header>
+        <a href="index.html" aria-label="Home" class="logo-link">
+            <img src="images/cat_logo.png" alt="Cat logo - A cute cat face" class="header__logo">
+        </a>
+        <h1>Cat Events</h1>
+        <button class="menu__btn" aria-label="Toggle menu" aria-expanded="false">
+            <img src="images/menu_icon.png" alt="" aria-hidden="true">
+        </button>
+        <nav class="nav__menu">
+            <a href="index.html">Home</a>
+            <a href="cats.html">Famous Cats</a>
+            <a href="cat-events.html">Cat Events</a>
+        </nav>
+    </header>
+
+    <main id="main-content" class="events-page">
+        <div class="events__container">
+            <section class="event__timeline">
+                <h2>Upcoming Events</h2>
+                <div class="timeline__item">
+                    <div class="event__date">NOV 15</div>
+                    <div class="event__content">
+                        <h3>International Cat Show</h3>
+                        <p>Annual gathering of the world's most prestigious cats.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="event__date">DEC 1</div>
+                    <div class="event__content">
+                        <h3>Cat Photography Workshop</h3>
+                        <p>Learn to capture your cat's best angles.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="event__date">DEC 8</div>
+                    <div class="event__content">
+                        <h3>Adoption Day</h3>
+                        <p>Find your perfect feline companion.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured__event">
+                <h2>Featured Event</h2>
+                <div class="featured__content">
+                    <img src="images/cat_fashion.jpg" alt="Cat Show Preview">
+                    <div class="featured__details">
+                        <h3>Cat Fashion Show 2024</h3>
+                        <p>Join us for the most stylish event of the year!</p>
+                        <ul class="event__info">
+                            <li><strong>Date:</strong> December 12, 2024</li>
+                            <li><strong>Location:</strong> Whiskers Arena</li>
+                            <li><strong>Time:</strong> 2:00 PM - 6:00 PM</li>
+                        </ul>
+                        <button class="register-btn featured">Register Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer__items">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="work.html">Work for Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="social.html">Social Media</a>
+        </nav>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="event-modal">
+        <div class="modal__content">
+            <h2>Event Registration</h2>
+            <form id="event-form" action="/register" method="POST">
+                <div class="form__control">
+                    <label for="name">Full Name: <span class="required">* required</span></label>
+                    <input type="text" id="name" name="name">
+                    <span class="error-message"></span>
+                </div>
+                <div class="form__control">
+                    <label for="event-email">Email: <span class="required">* required</span></label>
+                    <input type="text" id="event-email" name="email">
+                    <span class="error-message"></span>
+                </div>
+                <div class="form__control">
+                    <label for="event-select">Select Event: <span class="required">* required</span></label>
+                    <select id="event-select" name="event">
+                        <option value="">Choose an event...</option>
+                        <option value="show">International Cat Show</option>
+                        <option value="workshop">Photography Workshop</option>
+                        <option value="adoption">Adoption Day</option>
+                        <option value="fashion">Cat Fashion Show</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form__buttons">
+                    <button type="submit">Register</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
