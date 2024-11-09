@@ -1,0 +1,816 @@
+:root {
+    --header-bg: burlywood;
+    --panel-bg: white;
+    --body-bg: papayawhip;
+    --link-color: purple;
+    --error-color: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.skip__tocontent {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip__tocontent:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background: black;
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header-bg);
+    padding: 0.75rem;
+    text-align: center;
+    position: relative;
+}
+
+.logo-link {
+    left: 20px;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+.header__logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+h1 {
+    margin: 0.5rem 0;
+    font-size: 2.2rem;
+}
+
+p, .description {
+    line-height: 1.6;
+}
+
+.nav__menu {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px; 
+    margin: 0.75rem auto;
+    padding: 0 2rem;   
+    gap: 3rem;        
+    padding-left: 140px; 
+}
+
+.nav__menu a {
+    color: var(--link-color);
+    text-decoration: underline;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    padding: 0.5rem 1rem; 
+    transition: color 0.3s ease; 
+}
+
+.menu__btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.menu__btn img {
+    width: 24px;  /* Adjust size as needed */
+    height: 24px;
+    display: block;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.event__cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.event__card1, .event__card2 {
+    grid-column: span 12;
+    background-color: #eee;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.event__card1 h2, .event__card2 h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.event__card1 img, .event__card2 img {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+}
+
+.event__card1 img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+.event__card2 img {
+    float: left;
+    margin: 0 1rem 1rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.footer__items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;  
+    margin: 0 auto;
+    padding: 0 2rem;   
+    gap: 2rem;         
+}
+
+.footer__items a {
+    color: var(--link-color);
+    text-decoration: underline;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    padding: 0.5rem 1rem; 
+    transition: color 0.3s ease; 
+}
+
+a:focus, button:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+/* Modal */
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal__content {
+    background-color: white;
+    padding: 1.5rem;
+    max-width: 400px;
+    margin: 20vh auto;
+    border-radius: 5px;
+}
+
+.modal__content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form__control {
+    margin-bottom: 1rem;
+}
+
+.form__control label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form__control label .required {
+    font-style: italic;
+}
+
+.form__control input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form__control .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form__control.error input {
+    border-color: red;
+}
+
+.form__control.error .error-message {
+    display: block;
+}
+
+.form__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.form__buttons button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form__buttons button[type="submit"] {
+    background-color: lime;
+    color: black;
+}
+
+.cancel-btn {
+    background-color: lightcoral;
+    color: black;
+}
+
+/* Cats.html Specific Styles */
+.cats-page .event__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.cat__card {
+    background-color: #eee;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.cat__card h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.cat__card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.cat__card p {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.cat__card .subscribe-btn {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Tablet layout for cats page */
+@media (min-width: 44.1rem) and (max-width: 68rem) {
+    .cats-page .event__cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .cat__card {
+        padding: 8px;
+    }
+
+    .cat__card img {
+        height: 150px;
+    }
+
+    .cat__card h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Styles for cats page */
+@media (max-width: 900px) {
+    .cats-page .event__cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .cat__card {
+        padding: 8px;
+    }
+
+    .cat__card img {
+        height: 150px;
+    }
+
+    .cat__card h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 44rem) {
+    .cats-page .event__cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cat__card {
+        text-align: left;  
+    }
+
+    .cat__card h2 {
+        text-align: left;  
+        margin-bottom: 0.5rem;
+    }
+
+    .cat__card img {
+        width: 125px;
+        height: 125px;
+        margin: 0 0 1rem 0;  
+        display: block;
+    }
+
+    .cat__card p {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .header__logo {
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-left: 80px;
+        text-align: left;
+        padding-right: 50px;
+    }
+
+    .menu__btn {
+        display: block;
+    }
+
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--header-bg);
+        width: 200px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        z-index: 1000;
+    }
+
+    .nav__menu.show {
+        display: block;
+    }
+
+    .nav__menu a {
+        display: block;
+        margin: 0;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .event__cards {
+        gap: 1rem;
+    }
+
+    .event__card1, .event__card2 {
+        padding: 1rem;
+    }
+
+    .footer__items {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Styles for cat-events page */
+.events-page {
+    padding: 2rem 1rem;
+}
+
+.events__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event__timeline {
+    margin-bottom: 3rem;
+}
+
+.timeline__item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.63);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.event__date {
+    min-width: 100px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--header-bg);
+    border-radius: 5px;
+}
+
+.event__content {
+    flex: 1;
+}
+
+.event__content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--link-color);
+}
+
+.featured__event {
+    background-color: rgba(255, 255, 255, 0.63);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.featured__content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.featured__content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.featured__details {
+    flex: 1;
+}
+
+.event__info {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.event__info li {
+    margin-bottom: 0.5rem;
+}
+
+.register-btn {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.event-modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+    .timeline__item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event__date {
+        align-self: flex-start;
+    }
+
+    .featured__content {
+        flex-direction: column;
+    }
+
+    .featured__content img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Animations and Transitions */
+@media (prefers-reduced-motion: no-preference) {
+    /* Modal animations */
+    .modal, .event-modal {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal[style*="display: block"], 
+    .event-modal[style*="display: block"] {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal__content {
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+    }
+
+    .modal[style*="display: block"] .modal__content,
+    .event-modal[style*="display: block"] .modal__content {
+        transform: translateY(0);
+    }
+
+    /* Navigation menu animation */
+    .nav__menu {
+        transition: opacity 0.3s ease;
+    }
+
+    .nav__menu.show {
+        animation: slideIn 0.3s ease forwards;
+    }
+
+    /* Card hover effects */
+    .cat__card, .event__card1, .event__card2, .timeline__item {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cat__card:hover, 
+    .event__card1:hover, 
+    .event__card2:hover,
+    .timeline__item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button hover effects */
+    .subscribe-btn, .register-btn {
+        transition: opacity 0.2s ease;
+    }
+
+    .subscribe-btn:hover, .register-btn:hover {
+        opacity: 0.8;
+    }
+
+    /* Form input focus effects */
+    .form__control input,
+    .form__control select {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form__control input:focus,
+    .form__control select:focus {
+        border-color: var(--link-color);
+        box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.1);
+        outline: none;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Page transition effects */
+    .page-enter {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    
+    /* Form feedback animations */
+    .form__control input:valid {
+        animation: validInput 0.3s ease;
+    }
+}
+
+/* Accordion Styles */
+.accordion {
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    width: 400px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background: var(--header-bg);
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px; /* Fixed height for header */
+}
+
+.accordion-content {
+    display: none;
+    padding: 1.2rem;
+    background: white;
+    height: 200px; 
+    overflow-y: auto; 
+    width: 400px;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Add scrollbar styling for better appearance */
+.accordion-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.accordion-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb {
+    background: var(--header-bg);
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .accordion-content {
+        animation: slideDown 0.3s ease-out;
+    }
+}
+
+/* Carousel Styles */
+.carousel-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid purple;
+    border-radius: 5px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-content {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: rgba(222, 184, 135, 0.9); 
+    color: black;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(222, 184, 135, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: purple;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel {
+        transition: none;
+    }
+}
+
+@media (max-width: 44rem) {
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .carousel-container {
+        width:400px;
+    }
+    
+    .carousel-content {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Internet Cats - Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip__tocontent">Skip to main content</a>
+    
+    <header>
+        <a href="index.html" aria-label="Home" class="logo-link">
+            <img src="images/cat_logo.png" alt="Cat logo - A cute cat face" class="header__logo">
+        </a>
+        <h1>Famous Internet Cats</h1>
+        <button class="menu__btn" aria-label="Toggle menu" aria-expanded="false">
+            <img src="images/menu_icon.png" alt="" aria-hidden="true">
+        </button>
+        <nav class="nav__menu">
+            <a href="index.html">Home</a>
+            <a href="cats.html">Famous Cats</a>
+            <a href="cat-events.html">Cat Events</a>
+        </nav>
+    </header>
+
+    <main id="main-content" class="cats-page">
+        <div class="event__cards">
+            <section class="cat__card">
+                <h2>Grumpy Cat</h2>
+                <img src="images/cat_grumpy.jpg" alt="Grumpy Cat's famous frown">
+                <p>The world's most famously frowning feline, Grumpy Cat (real name: Tardar Sauce) became an internet sensation in 2012. Her permanently disgruntled expression made her the face of countless memes.</p>
+                <p>Despite her grumpy appearance, she brought joy to millions and built a multi-million dollar brand. <button class="subscribe-btn">Subscribe</button> for more updates.</p>
+            </section>
+            
+            <section class="cat__card">
+                <h2>Maru</h2>
+                <img src="images/cat_inbox.jpg" alt="Cat in a box">
+                <p>Japan's most famous cat, Maru is known worldwide for his love of boxes and sliding adventures. Since 2008, his YouTube channel has garnered over 350 million views.</p>
+                <p>This Scottish Fold cat has starred in several books and commercials. <button class="subscribe-btn">Subscribe</button> for more Maru moments.</p>
+            </section>
+            
+            <section class="cat__card">
+                <h2>Nala Cat</h2>
+                <img src="images/cat_nala.jpg" alt="Gentle stroking a cat">
+                <p>With over 4 million Instagram followers, Nala holds the Guinness World Record for the most followed cat on Instagram. Her charming cross-eyed look and sweet personality have won hearts globally.</p>
+                <p>From shelter cat to social media star, Nala inspires pet adoption worldwide. <button class="subscribe-btn">Subscribe</button> to follow her journey.</p>
+            </section>
+            
+            <section class="cat__card">
+                <h2>Lil Bub</h2>
+                <img src="images/cat_lilbub.jpg" alt="A cute cat posing">
+                <p>Born with several genetic uniquenesses, Lil Bub became famous for her tiny size, big eyes, and perpetually protruding tongue. She helped raise over $700,000 for animal charities.</p>
+                <p>Though she passed in 2019, her legacy of helping special needs pets continues. <button class="subscribe-btn">Subscribe</button> to honor her memory.</p>
+            </section>
+            
+            <section class="cat__card">
+                <h2>Colonel Meow</h2>
+                <img src="images/cat_colonel.jpg" alt="Colonel Meow's serious expression">
+                <p>Holder of the Guinness World Record for longest fur on a cat (9 inches), Colonel Meow was known for his intense stare and majestic appearance. His 'minions' followed his every command on social media.</p>
+                <p>This Himalayan-Persian mix ruled the internet with an iron paw. <button class="subscribe-btn">Subscribe</button> to join his army.</p>
+            </section>
+            
+            <section class="cat__card">
+                <h2>Henri Le Chat Noir</h2>
+                <img src="images/cat_blackwhite.jpg" alt="Black and white colored cat">
+                <p>Known as the existential cat philosopher, Henri stars in artistic black-and-white films where he contemplates life's complexities with French-subtitled narration.</p>
+                <p>His sophisticated commentary on modern life has earned him millions of views. <button class="subscribe-btn">Subscribe</button> for more philosophical musings.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer__items">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="work.html">Work for Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="social.html">Social Media</a>
+        </nav>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal__content">
+            <h2>Subscribe to the Latest Mews!</h2>
+            <form id="subscribe-form" action="/subscribe" method="POST">
+                <div class="form__control">
+                    <label for="email">Email: <span class="required" aria-label="required">* required</span></label>
+                    <input type="text" id="email" name="email" aria-label="required" aria-describedby="email-error">
+                    <span id="email-error" class="error-message" role="alert">This field is required</span>
+                </div>
+                <div class="form__control">
+                    <label for="confirm-email">Confirm Email: <span class="required" aria-label="required">* required</span></label>
+                    <input type="text" id="confirm-email" name="confirm-email" aria-label="required" aria-describedby="email2-error">
+                    <span id="email2-error" class="error-message" role="alert">This field must match the provided email address</span>
+                </div>
+                <div class="form__buttons">
+                    <button type="submit">Subscribe</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
