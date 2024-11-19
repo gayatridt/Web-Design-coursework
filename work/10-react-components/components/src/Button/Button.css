@@ -1,0 +1,82 @@
+/* Button.css */
+.button-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;  /* Added for absolute positioning of feedback */
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-button {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-link {
+  background: none;
+  color: #3498db;
+  padding: 0.5rem 1rem;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: #000000;
+}
+
+.clicked {
+  transform: scale(0.95);
+}
+
+.click-feedback {
+  font-size: 1.2rem;          
+  font-weight: bold;          
+  color: #2ecc71;           
+  position: absolute;
+  bottom: -15px;             
+  left: 50%;                 
+  transform: translateX(-50%);
+  background-color: #e8f8f5;  
+  padding: 4px 12px;         
+  border-radius: 4px;        
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: popFadeIn 1s ease-out forwards;
+  white-space: nowrap;       
+  z-index: 10;              
+}
+
+@keyframes popFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.1);
+  }
+  40% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.8);
+  }
+}
