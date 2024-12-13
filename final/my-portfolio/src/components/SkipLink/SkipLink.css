@@ -1,0 +1,17 @@
+/* src/components/SkipLink/SkipLink.css */
+.skip-link {
+    background: #4A9DFF;
+    color: white;
+    padding: 0.5rem;
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
